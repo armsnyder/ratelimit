@@ -1,22 +1,24 @@
-hash: fe989994477e78bb58fd50892030bc6c0d0bbbf95b50012e7e9b10e2b2bd0f8d
-updated: 2018-06-07T16:52:24.670498-07:00
+hash: 020d5c7869b5028e78774088ca8a6c02e8dae731303cfae62f014025448f5c1f
+updated: 2018-11-13T16:33:47.591113-08:00
 imports:
 - name: github.com/envoyproxy/data-plane-api
-  version: 0f8a2a3d456de4d3a29f4e8f7a641fef011d1394
+  version: ea5bba9e8ebb84d31c4967c0ee3e16a8f36bc39d
 - name: github.com/fsnotify/fsnotify
   version: 629574ca2a5df945712d3079857300b5e4da0236
 - name: github.com/golang/mock
-  version: 22bbf0ddf08105dfa364d0a2fa619dfa71014af5
+  version: 8a44ef6e8be577e050008c7886f24fc705d709fb
   subpackages:
   - gomock
 - name: github.com/golang/protobuf
   version: b4deda0973fb4c70b50d226b1af49f3da59f5265
   subpackages:
+  - jsonpb
   - proto
   - protoc-gen-go/descriptor
   - ptypes
   - ptypes/any
   - ptypes/duration
+  - ptypes/struct
   - ptypes/timestamp
 - name: github.com/google/protobuf
   version: 106ffc04be1abf3ff3399f54ccf149815b287dd9
@@ -46,7 +48,7 @@ imports:
   - pool
   - redis
 - name: github.com/sirupsen/logrus
-  version: c155da19408a8799da419ed3eeb0cb5db0ad5dbc
+  version: 3e01752db0189b9157070a0e1668a620f9a85da2
 - name: github.com/stretchr/testify
   version: f390dcf405f7b83c997eac1b06768bb9f44dec18
   subpackages:
@@ -56,7 +58,7 @@ imports:
   subpackages:
   - ssh/terminal
 - name: golang.org/x/net
-  version: 1e491301e022f8f977054da4c2d852decd59571f
+  version: 88d92db4c548972d942ac2a3531a8a9a34c82ca6
   subpackages:
   - context
   - http/httpguts
@@ -95,6 +97,8 @@ imports:
   - encoding/proto
   - grpclb/grpc_lb_v1/messages
   - grpclog
+  - health
+  - health/grpc_health_v1
   - internal
   - keepalive
   - metadata

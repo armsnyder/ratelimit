@@ -44,8 +44,10 @@ func Run() {
 			rand.New(redis.NewLockedSource(time.Now().Unix())),
 			s.ExpirationJitterMaxSeconds),
 		config.NewRateLimitConfigLoaderImpl(),
-		srv.Scope().Scope("service"))
-
+		srv.Scope().Scope("service"),
+		s.ResponseHeadersEnabled,
+		ratelimit.Clock{UnixSeconds: func() int64 { return time.Now().Unix() }},
+	)
 	srv.AddDebugHttpEndpoint(
 		"/rlconfig",
 		"print out the currently loaded configuration for debugging",
