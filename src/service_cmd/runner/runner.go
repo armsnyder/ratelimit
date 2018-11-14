@@ -6,14 +6,14 @@ import (
 	"net/http"
 	"time"
 
-	pb "github.com/lyft/ratelimit/proto/envoy/service/ratelimit/v2"
-	pb_legacy "github.com/lyft/ratelimit/proto/ratelimit"
+	pb "github.com/asnyder/ratelimit/proto/envoy/service/ratelimit/v2"
+	pb_legacy "github.com/asnyder/ratelimit/proto/ratelimit"
 
-	"github.com/lyft/ratelimit/src/config"
-	"github.com/lyft/ratelimit/src/redis"
-	"github.com/lyft/ratelimit/src/server"
-	"github.com/lyft/ratelimit/src/service"
-	"github.com/lyft/ratelimit/src/settings"
+	"github.com/asnyder/ratelimit/src/config"
+	"github.com/asnyder/ratelimit/src/redis"
+	"github.com/asnyder/ratelimit/src/server"
+	"github.com/asnyder/ratelimit/src/service"
+	"github.com/asnyder/ratelimit/src/settings"
 	logger "github.com/sirupsen/logrus"
 )
 
@@ -58,7 +58,7 @@ func Run() {
 	// Ratelimit is compatible with two proto definitions
 	// 1. data-plane-api rls.proto: https://github.com/envoyproxy/data-plane-api/blob/master/envoy/service/ratelimit/v2/rls.proto
 	pb.RegisterRateLimitServiceServer(srv.GrpcServer(), service)
-	// 2. ratelimit.proto defined in this repository: https://github.com/lyft/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto
+	// 2. ratelimit.proto defined in this repository: https://github.com/asnyder/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto
 	pb_legacy.RegisterRateLimitServiceServer(srv.GrpcServer(), service.GetLegacyService())
 	// (1) is the current definition, and (2) is the legacy definition.
 

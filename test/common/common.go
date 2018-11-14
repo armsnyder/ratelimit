@@ -1,9 +1,9 @@
 package common
 
 import (
-	pb_struct "github.com/lyft/ratelimit/proto/envoy/api/v2/ratelimit"
-	pb "github.com/lyft/ratelimit/proto/envoy/service/ratelimit/v2"
-	pb_legacy "github.com/lyft/ratelimit/proto/ratelimit"
+	pb_struct "github.com/asnyder/ratelimit/proto/envoy/api/v2/ratelimit"
+	pb "github.com/asnyder/ratelimit/proto/envoy/service/ratelimit/v2"
+	pb_legacy "github.com/asnyder/ratelimit/proto/ratelimit"
 )
 
 func NewRateLimitRequest(domain string, descriptors [][][2]string, hitsAddend uint32) *pb.RateLimitRequest {

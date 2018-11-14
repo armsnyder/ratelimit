@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/lyft/gostats"
-	pb_struct "github.com/lyft/ratelimit/proto/envoy/api/v2/ratelimit"
-	pb "github.com/lyft/ratelimit/proto/envoy/service/ratelimit/v2"
+	pb_struct "github.com/asnyder/ratelimit/proto/envoy/api/v2/ratelimit"
+	pb "github.com/asnyder/ratelimit/proto/envoy/service/ratelimit/v2"
 	logger "github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"gopkg.in/yaml.v2"

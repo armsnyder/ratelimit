@@ -10,14 +10,14 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/lyft/ratelimit/proto/envoy/service/ratelimit/v2"
-	pb_legacy "github.com/lyft/ratelimit/proto/ratelimit"
-	"github.com/lyft/ratelimit/src/service_cmd/runner"
-	"github.com/lyft/ratelimit/test/common"
+	pb "github.com/asnyder/ratelimit/proto/envoy/service/ratelimit/v2"
+	pb_legacy "github.com/asnyder/ratelimit/proto/ratelimit"
+	"github.com/asnyder/ratelimit/src/service_cmd/runner"
+	"github.com/asnyder/ratelimit/test/common"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	"github.com/lyft/ratelimit/proto/envoy/api/v2/core"
+	"github.com/asnyder/ratelimit/proto/envoy/api/v2/core"
 )
 
 func newDescriptorStatus(

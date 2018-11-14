@@ -3,7 +3,7 @@ $(error GOPATH must be set)
 endif
 
 SHELL := /bin/bash
-GOREPO := ${GOPATH}/src/github.com/lyft/ratelimit
+GOREPO := ${GOPATH}/src/github.com/asnyder/ratelimit
 
 .PHONY: bootstrap
 bootstrap:

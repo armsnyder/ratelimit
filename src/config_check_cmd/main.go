@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/lyft/gostats"
-	"github.com/lyft/ratelimit/src/config"
+	"github.com/asnyder/ratelimit/src/config"
 )
 
 func loadConfigs(allConfigs []config.RateLimitConfigToLoad) {

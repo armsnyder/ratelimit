@@ -39,10 +39,10 @@ decision is then returned to the caller.
 
 Envoy's data-plane-api defines a ratelimit service proto [rls.proto](https://github.com/envoyproxy/data-plane-api/blob/master/envoy/service/ratelimit/v2/rls.proto).
 Logically the data-plane-api [rls](https://github.com/envoyproxy/data-plane-api/blob/master/envoy/service/ratelimit/v2/rls.proto)
-is equivalent to the [ratelimit.proto](https://github.com/lyft/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto)
+is equivalent to the [ratelimit.proto](https://github.com/asnyder/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto)
 defined in this repo. However, due
 to the namespace differences and how gRPC routing works it is not possible to transparently route the
-legacy ratelimit (ones based in the [ratelimit.proto](https://github.com/lyft/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto)
+legacy ratelimit (ones based in the [ratelimit.proto](https://github.com/asnyder/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto)
 defined in this repo) requests to the data-plane-api
 definitions. Therefore, the ratelimit service will upgrade the requests, process them internally as it would
 process a data-plane-api ratelimit request, and then downgrade the response to send back to the client. This means that,
@@ -52,8 +52,8 @@ for a slight performance hit for clients using the legacy proto, ratelimit is ba
 
 1. `v1.0.0` tagged on commit `0ded92a2af8261d43096eba4132e45b99a3b8b14`. Ratelimit has been in production
 use at Lyft for over 2 years.
-2. `v1.1.0` introduces the data-plane-api proto and initiates the deprecation of the legacy [ratelimit.proto](https://github.com/lyft/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto).
-3. `v2.0.0` deletes support for the legacy [ratelimit.proto](https://github.com/lyft/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto). This version will be tagged by the end of 2018Q3 (~September 2018)
+2. `v1.1.0` introduces the data-plane-api proto and initiates the deprecation of the legacy [ratelimit.proto](https://github.com/asnyder/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto).
+3. `v2.0.0` deletes support for the legacy [ratelimit.proto](https://github.com/asnyder/ratelimit/blob/0ded92a2af8261d43096eba4132e45b99a3b8b14/proto/ratelimit/ratelimit.proto). This version will be tagged by the end of 2018Q3 (~September 2018)
 to give time to community members running ratelimit off of `master`.
 
 
@@ -307,7 +307,7 @@ descriptors:
 The Ratelimit service uses a library written by Lyft called [goruntime](https://github.com/lyft/goruntime) to do configuration loading. Goruntime monitors
 a designated path, and watches for symlink swaps to files in the directory tree to reload configuration files.
 
-The path to watch can be configured via the [settings](https://github.com/lyft/ratelimit/blob/master/src/settings/settings.go)
+The path to watch can be configured via the [settings](https://github.com/asnyder/ratelimit/blob/master/src/settings/settings.go)
 package with the following environment variables:
 
 ```
@@ -322,7 +322,7 @@ For more information on how runtime works you can read its [README](https://gith
 # Request Fields
 
 For information on the fields of a Ratelimit gRPC request please read the information
-on the RateLimitRequest message type in the Ratelimit [proto file.](https://github.com/lyft/ratelimit/blob/master/proto/ratelimit/ratelimit.proto)
+on the RateLimitRequest message type in the Ratelimit [proto file.](https://github.com/asnyder/ratelimit/blob/master/proto/ratelimit/ratelimit.proto)
 
 # Statistics
 

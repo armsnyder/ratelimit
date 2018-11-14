@@ -8,8 +8,8 @@ import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/lyft/protoc-gen-validate/validate"
-	core "github.com/lyft/ratelimit/proto/envoy/api/v2/core"
-	ratelimit "github.com/lyft/ratelimit/proto/envoy/api/v2/ratelimit"
+	core "github.com/asnyder/ratelimit/proto/envoy/api/v2/core"
+	ratelimit "github.com/asnyder/ratelimit/proto/envoy/api/v2/ratelimit"
 	grpc "google.golang.org/grpc"
 	math "math"
 )
